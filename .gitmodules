@@ -1,0 +1,3 @@
+[submodule "GL_EditorFramework-NET"]
+	path = GL_EditorFramework-NET
+	url = https://github.com/Jenrikku/GL_EditorFramework-NET.git
