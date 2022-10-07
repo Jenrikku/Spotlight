@@ -1077,14 +1077,14 @@ namespace Spotlight.GUI
 
         //----------------------------------------------------------------------------
 
-        private void SpotlightWikiToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start("https://github.com/jupahe64/Spotlight/wiki");
+        private void SpotlightWikiToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start(new ProcessStartInfo("https://github.com/jupahe64/Spotlight/wiki") { UseShellExecute = true });
 
         private void CheckForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (CheckForUpdates(out Version Latest, true))
             {
                 if (MessageBox.Show(string.Format(UpdateReadyText, Latest.ToString()), UpdateReadyHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    Process.Start("https://github.com/jupahe64/Spotlight/releases");
+                    Process.Start(new ProcessStartInfo("https://github.com/jupahe64/Spotlight/releases") { UseShellExecute = true });
             }
             else if (!Latest.Equals(new Version(0, 0, 0, 0)))
                 MessageBox.Show(string.Format(UpdateNoneText, new Version(Application.ProductVersion).ToString()), UpdateNoneHeader, MessageBoxButtons.OK, MessageBoxIcon.Information);

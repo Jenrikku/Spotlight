@@ -37,10 +37,12 @@
             // 
             // MainProgressBar
             // 
+            this.MainProgressBar.BackColor = System.Drawing.SystemColors.Control;
             this.MainProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainProgressBar.Location = new System.Drawing.Point(0, 0);
+            this.MainProgressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MainProgressBar.Name = "MainProgressBar";
-            this.MainProgressBar.Size = new System.Drawing.Size(328, 32);
+            this.MainProgressBar.Size = new System.Drawing.Size(383, 37);
             this.MainProgressBar.Step = 20;
             this.MainProgressBar.TabIndex = 0;
             // 
@@ -61,12 +63,13 @@
             // 
             // LoadLevelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 32);
+            this.ClientSize = new System.Drawing.Size(383, 37);
             this.ControlBox = false;
             this.Controls.Add(this.MainProgressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LoadLevelForm";
             this.Text = "[Message]";
             this.ResumeLayout(false);

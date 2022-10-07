@@ -50,6 +50,9 @@ namespace Spotlight
         {
             SetProcessDpiAwareness(PROCESS_DPI_AWARENESS.Process_Per_Monitor_DPI_Aware);
 
+            // Enable Shift-JIS
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
             string platform;
 
             if (IntPtr.Size * 8 == 64)

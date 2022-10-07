@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddObjectForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ObjDBListView = new BrightIdeasSoftware.FastObjectListView();
-            this.ClassNameColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.EnglishNameColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.ObjListColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.ClassNameColumn = new BrightIdeasSoftware.OLVColumn();
+            this.EnglishNameColumn = new BrightIdeasSoftware.OLVColumn();
+            this.ObjListColumn = new BrightIdeasSoftware.OLVColumn();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -80,6 +80,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -93,8 +94,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(868, 425);
+            this.splitContainer1.Size = new System.Drawing.Size(1013, 490);
             this.splitContainer1.SplitterDistance = 291;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // ObjDBListView
@@ -109,20 +111,18 @@
             this.ObjDBListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ClassNameColumn,
             this.EnglishNameColumn});
-            this.ObjDBListView.Cursor = System.Windows.Forms.Cursors.Default;
             this.ObjDBListView.EmptyListMsg = "No Items Found";
             this.ObjDBListView.FullRowSelect = true;
-            this.ObjDBListView.HideSelection = false;
-            this.ObjDBListView.Location = new System.Drawing.Point(6, 32);
+            this.ObjDBListView.Location = new System.Drawing.Point(7, 36);
+            this.ObjDBListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ObjDBListView.MultiSelect = false;
             this.ObjDBListView.Name = "ObjDBListView";
             this.ObjDBListView.ShowGroups = false;
-            this.ObjDBListView.Size = new System.Drawing.Size(276, 391);
+            this.ObjDBListView.Size = new System.Drawing.Size(272, 451);
             this.ObjDBListView.TabIndex = 6;
             this.ObjDBListView.UseCompatibleStateImageBehavior = false;
             this.ObjDBListView.View = System.Windows.Forms.View.Details;
             this.ObjDBListView.VirtualMode = true;
-            this.ObjDBListView.FullRowSelect = true;
-            this.ObjDBListView.MultiSelect = false;
             this.ObjDBListView.SelectionChanged += new System.EventHandler(this.ObjDBListView_SelectionChanged);
             // 
             // ClassNameColumn
@@ -152,18 +152,20 @@
             // 
             this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchTextBox.Location = new System.Drawing.Point(53, 5);
+            this.SearchTextBox.Location = new System.Drawing.Point(62, 6);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(229, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(217, 23);
             this.SearchTextBox.TabIndex = 1;
             // 
             // SearchLabel
             // 
             this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(6, 5);
+            this.SearchLabel.Location = new System.Drawing.Point(7, 6);
+            this.SearchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.SearchLabel.Size = new System.Drawing.Size(44, 15);
+            this.SearchLabel.Size = new System.Drawing.Size(45, 17);
             this.SearchLabel.TabIndex = 5;
             this.SearchLabel.Text = "Search:";
             // 
@@ -172,6 +174,7 @@
             this.splitContainer2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -188,8 +191,9 @@
             this.splitContainer2.Panel2.Controls.Add(this.PropertyListBox);
             this.splitContainer2.Panel2.Controls.Add(this.PropertiesLabel);
             this.splitContainer2.Panel2.Controls.Add(this.PropertyDescriptionTextBox);
-            this.splitContainer2.Size = new System.Drawing.Size(573, 425);
-            this.splitContainer2.SplitterDistance = 189;
+            this.splitContainer2.Size = new System.Drawing.Size(717, 490);
+            this.splitContainer2.SplitterDistance = 216;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 12;
             // 
             // ObjectDescriptionTextBox
@@ -198,11 +202,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ObjectDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ObjectDescriptionTextBox.Location = new System.Drawing.Point(3, 55);
+            this.ObjectDescriptionTextBox.Location = new System.Drawing.Point(4, 63);
+            this.ObjectDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ObjectDescriptionTextBox.Multiline = true;
             this.ObjectDescriptionTextBox.Name = "ObjectDescriptionTextBox";
             this.ObjectDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ObjectDescriptionTextBox.Size = new System.Drawing.Size(563, 131);
+            this.ObjectDescriptionTextBox.Size = new System.Drawing.Size(705, 149);
             this.ObjectDescriptionTextBox.TabIndex = 8;
             this.ObjectDescriptionTextBox.Text = "A normal Goomba";
             this.ObjectDescriptionTextBox.TextChanged += new System.EventHandler(this.ObjectDescriptionTextBox_TextChanged);
@@ -213,10 +218,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EnglishNameTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EnglishNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EnglishNameTextBox.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnglishNameTextBox.Location = new System.Drawing.Point(4, 6);
+            this.EnglishNameTextBox.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EnglishNameTextBox.Location = new System.Drawing.Point(5, 7);
+            this.EnglishNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EnglishNameTextBox.Name = "EnglishNameTextBox";
-            this.EnglishNameTextBox.Size = new System.Drawing.Size(561, 23);
+            this.EnglishNameTextBox.Size = new System.Drawing.Size(703, 23);
             this.EnglishNameTextBox.TabIndex = 7;
             this.EnglishNameTextBox.Text = "Goomba";
             this.EnglishNameTextBox.TextChanged += new System.EventHandler(this.EnglishNameTextBox_TextChanged);
@@ -225,9 +231,10 @@
             // ClassNameLabel
             // 
             this.ClassNameLabel.AutoSize = true;
-            this.ClassNameLabel.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.ClassNameLabel.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ClassNameLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.ClassNameLabel.Location = new System.Drawing.Point(3, 31);
+            this.ClassNameLabel.Location = new System.Drawing.Point(4, 36);
+            this.ClassNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClassNameLabel.Name = "ClassNameLabel";
             this.ClassNameLabel.Size = new System.Drawing.Size(46, 15);
             this.ClassNameLabel.TabIndex = 9;
@@ -242,9 +249,10 @@
             this.PropertyListBox.FormattingEnabled = true;
             this.PropertyListBox.IntegralHeight = false;
             this.PropertyListBox.ItemHeight = 20;
-            this.PropertyListBox.Location = new System.Drawing.Point(3, 20);
+            this.PropertyListBox.Location = new System.Drawing.Point(4, 23);
+            this.PropertyListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PropertyListBox.Name = "PropertyListBox";
-            this.PropertyListBox.Size = new System.Drawing.Size(236, 210);
+            this.PropertyListBox.Size = new System.Drawing.Size(324, 241);
             this.PropertyListBox.TabIndex = 15;
             this.PropertyListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.PropertyListBox_DrawItem);
             this.PropertyListBox.SelectedIndexChanged += new System.EventHandler(this.PropertyListBox_SelectedIndexChanged);
@@ -252,9 +260,10 @@
             // PropertiesLabel
             // 
             this.PropertiesLabel.AutoSize = true;
-            this.PropertiesLabel.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.PropertiesLabel.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PropertiesLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.PropertiesLabel.Location = new System.Drawing.Point(3, 0);
+            this.PropertiesLabel.Location = new System.Drawing.Point(4, 0);
+            this.PropertiesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PropertiesLabel.Name = "PropertiesLabel";
             this.PropertiesLabel.Size = new System.Drawing.Size(76, 17);
             this.PropertiesLabel.TabIndex = 11;
@@ -266,11 +275,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PropertyDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.PropertyDescriptionTextBox.Enabled = false;
-            this.PropertyDescriptionTextBox.Location = new System.Drawing.Point(245, 20);
+            this.PropertyDescriptionTextBox.Location = new System.Drawing.Point(335, 23);
+            this.PropertyDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PropertyDescriptionTextBox.Multiline = true;
             this.PropertyDescriptionTextBox.Name = "PropertyDescriptionTextBox";
             this.PropertyDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.PropertyDescriptionTextBox.Size = new System.Drawing.Size(321, 210);
+            this.PropertyDescriptionTextBox.Size = new System.Drawing.Size(374, 241);
             this.PropertyDescriptionTextBox.TabIndex = 10;
             this.PropertyDescriptionTextBox.TextChanged += new System.EventHandler(this.PropertyDescriptionTextBox_TextChanged);
             // 
@@ -278,9 +288,10 @@
             // 
             this.ToQuickFavoritesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ToQuickFavoritesButton.Enabled = false;
-            this.ToQuickFavoritesButton.Location = new System.Drawing.Point(749, 524);
+            this.ToQuickFavoritesButton.Location = new System.Drawing.Point(874, 605);
+            this.ToQuickFavoritesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ToQuickFavoritesButton.Name = "ToQuickFavoritesButton";
-            this.ToQuickFavoritesButton.Size = new System.Drawing.Size(132, 30);
+            this.ToQuickFavoritesButton.Size = new System.Drawing.Size(154, 35);
             this.ToQuickFavoritesButton.TabIndex = 6;
             this.ToQuickFavoritesButton.Text = "To QuickFavorites";
             this.ToQuickFavoritesButton.UseVisualStyleBackColor = true;
@@ -291,9 +302,10 @@
             this.SelectObjectButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectObjectButton.Enabled = false;
-            this.SelectObjectButton.Location = new System.Drawing.Point(6, 524);
+            this.SelectObjectButton.Location = new System.Drawing.Point(7, 605);
+            this.SelectObjectButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SelectObjectButton.Name = "SelectObjectButton";
-            this.SelectObjectButton.Size = new System.Drawing.Size(737, 30);
+            this.SelectObjectButton.Size = new System.Drawing.Size(860, 35);
             this.SelectObjectButton.TabIndex = 5;
             this.SelectObjectButton.Text = "Select";
             this.SelectObjectButton.UseVisualStyleBackColor = true;
@@ -303,9 +315,10 @@
             // 
             this.ObjectNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ObjectNameLabel.AutoSize = true;
-            this.ObjectNameLabel.Location = new System.Drawing.Point(3, 5);
+            this.ObjectNameLabel.Location = new System.Drawing.Point(4, 5);
+            this.ObjectNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ObjectNameLabel.Name = "ObjectNameLabel";
-            this.ObjectNameLabel.Size = new System.Drawing.Size(69, 13);
+            this.ObjectNameLabel.Size = new System.Drawing.Size(77, 15);
             this.ObjectNameLabel.TabIndex = 6;
             this.ObjectNameLabel.Text = "Object Name";
             // 
@@ -313,9 +326,10 @@
             // 
             this.ModelNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ModelNameLabel.AutoSize = true;
-            this.ModelNameLabel.Location = new System.Drawing.Point(433, 5);
+            this.ModelNameLabel.Location = new System.Drawing.Point(506, 5);
+            this.ModelNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ModelNameLabel.Name = "ModelNameLabel";
-            this.ModelNameLabel.Size = new System.Drawing.Size(67, 13);
+            this.ModelNameLabel.Size = new System.Drawing.Size(76, 15);
             this.ModelNameLabel.TabIndex = 9;
             this.ModelNameLabel.Text = "Model Name";
             // 
@@ -326,9 +340,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SharedContentPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.SharedContentPanel.Controls.Add(this.splitContainer1);
-            this.SharedContentPanel.Location = new System.Drawing.Point(10, 29);
+            this.SharedContentPanel.Location = new System.Drawing.Point(12, 33);
+            this.SharedContentPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SharedContentPanel.Name = "SharedContentPanel";
-            this.SharedContentPanel.Size = new System.Drawing.Size(868, 425);
+            this.SharedContentPanel.Size = new System.Drawing.Size(1013, 490);
             this.SharedContentPanel.TabIndex = 10;
             // 
             // ObjectTypeTabControl
@@ -339,20 +354,22 @@
             this.ObjectTypeTabControl.Controls.Add(this.ObjectsTab);
             this.ObjectTypeTabControl.Controls.Add(this.RailsTab);
             this.ObjectTypeTabControl.Controls.Add(this.AreasTab);
-            this.ObjectTypeTabControl.Location = new System.Drawing.Point(6, 6);
+            this.ObjectTypeTabControl.Location = new System.Drawing.Point(7, 7);
+            this.ObjectTypeTabControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ObjectTypeTabControl.Name = "ObjectTypeTabControl";
             this.ObjectTypeTabControl.SelectedIndex = 0;
-            this.ObjectTypeTabControl.Size = new System.Drawing.Size(876, 509);
+            this.ObjectTypeTabControl.Size = new System.Drawing.Size(1022, 587);
             this.ObjectTypeTabControl.TabIndex = 12;
             this.ObjectTypeTabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
             // 
             // ObjectsTab
             // 
             this.ObjectsTab.Controls.Add(this.tableLayoutPanel1);
-            this.ObjectsTab.Location = new System.Drawing.Point(4, 22);
+            this.ObjectsTab.Location = new System.Drawing.Point(4, 24);
+            this.ObjectsTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ObjectsTab.Name = "ObjectsTab";
-            this.ObjectsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ObjectsTab.Size = new System.Drawing.Size(868, 483);
+            this.ObjectsTab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ObjectsTab.Size = new System.Drawing.Size(1014, 559);
             this.ObjectsTab.TabIndex = 0;
             this.ObjectsTab.Text = "Objects";
             this.ObjectsTab.UseVisualStyleBackColor = true;
@@ -368,12 +385,13 @@
             this.tableLayoutPanel1.Controls.Add(this.ModelNameLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ObjectNameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ModelNameTextBox, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 434);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 501);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.13044F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.86956F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(861, 46);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1004, 53);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // ObjectNameTextBox
@@ -381,10 +399,11 @@
             this.ObjectNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ObjectNameTextBox.Enabled = false;
             this.ObjectNameTextBox.FilterSuggestions = true;
-            this.ObjectNameTextBox.Location = new System.Drawing.Point(3, 21);
+            this.ObjectNameTextBox.Location = new System.Drawing.Point(4, 23);
+            this.ObjectNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ObjectNameTextBox.Name = "ObjectNameTextBox";
             this.ObjectNameTextBox.PossibleSuggestions = new string[0];
-            this.ObjectNameTextBox.Size = new System.Drawing.Size(424, 20);
+            this.ObjectNameTextBox.Size = new System.Drawing.Size(494, 23);
             this.ObjectNameTextBox.SuggestClear = false;
             this.ObjectNameTextBox.TabIndex = 3;
             this.ObjectNameTextBox.TabStop = false;
@@ -394,10 +413,11 @@
             this.ModelNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ModelNameTextBox.Enabled = false;
             this.ModelNameTextBox.FilterSuggestions = true;
-            this.ModelNameTextBox.Location = new System.Drawing.Point(433, 21);
+            this.ModelNameTextBox.Location = new System.Drawing.Point(506, 23);
+            this.ModelNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ModelNameTextBox.Name = "ModelNameTextBox";
             this.ModelNameTextBox.PossibleSuggestions = new string[0];
-            this.ModelNameTextBox.Size = new System.Drawing.Size(425, 20);
+            this.ModelNameTextBox.Size = new System.Drawing.Size(494, 23);
             this.ModelNameTextBox.SuggestClear = true;
             this.ModelNameTextBox.TabIndex = 4;
             this.ModelNameTextBox.TabStop = false;
@@ -405,29 +425,32 @@
             // RailsTab
             // 
             this.RailsTab.Controls.Add(this.PathShapeSelector);
-            this.RailsTab.Location = new System.Drawing.Point(4, 22);
+            this.RailsTab.Location = new System.Drawing.Point(4, 24);
+            this.RailsTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RailsTab.Name = "RailsTab";
-            this.RailsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.RailsTab.Size = new System.Drawing.Size(868, 483);
+            this.RailsTab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.RailsTab.Size = new System.Drawing.Size(1014, 559);
             this.RailsTab.TabIndex = 1;
             this.RailsTab.Text = "Rails";
             this.RailsTab.UseVisualStyleBackColor = true;
             // 
             // PathShapeSelector
             // 
-            this.PathShapeSelector.Location = new System.Drawing.Point(6, 430);
+            this.PathShapeSelector.Location = new System.Drawing.Point(7, 496);
+            this.PathShapeSelector.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PathShapeSelector.Name = "PathShapeSelector";
-            this.PathShapeSelector.Size = new System.Drawing.Size(854, 50);
+            this.PathShapeSelector.Size = new System.Drawing.Size(996, 58);
             this.PathShapeSelector.TabIndex = 11;
             // 
             // AreasTab
             // 
             this.AreasTab.Controls.Add(this.AreaShapeComboBox);
             this.AreasTab.Controls.Add(this.AreaShapeLabel);
-            this.AreasTab.Location = new System.Drawing.Point(4, 22);
+            this.AreasTab.Location = new System.Drawing.Point(4, 24);
+            this.AreasTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AreasTab.Name = "AreasTab";
-            this.AreasTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AreasTab.Size = new System.Drawing.Size(868, 483);
+            this.AreasTab.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AreasTab.Size = new System.Drawing.Size(1014, 559);
             this.AreasTab.TabIndex = 2;
             this.AreasTab.Text = "Areas";
             this.AreasTab.UseVisualStyleBackColor = true;
@@ -437,30 +460,33 @@
             this.AreaShapeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreaShapeComboBox.Enabled = false;
             this.AreaShapeComboBox.FormattingEnabled = true;
-            this.AreaShapeComboBox.Location = new System.Drawing.Point(6, 456);
+            this.AreaShapeComboBox.Location = new System.Drawing.Point(7, 526);
+            this.AreaShapeComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AreaShapeComboBox.Name = "AreaShapeComboBox";
-            this.AreaShapeComboBox.Size = new System.Drawing.Size(854, 21);
+            this.AreaShapeComboBox.Size = new System.Drawing.Size(996, 23);
             this.AreaShapeComboBox.TabIndex = 12;
             // 
             // AreaShapeLabel
             // 
             this.AreaShapeLabel.AutoSize = true;
-            this.AreaShapeLabel.Location = new System.Drawing.Point(6, 440);
+            this.AreaShapeLabel.Location = new System.Drawing.Point(7, 508);
+            this.AreaShapeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AreaShapeLabel.Name = "AreaShapeLabel";
-            this.AreaShapeLabel.Size = new System.Drawing.Size(63, 13);
+            this.AreaShapeLabel.Size = new System.Drawing.Size(66, 15);
             this.AreaShapeLabel.TabIndex = 11;
             this.AreaShapeLabel.Text = "Area Shape";
             // 
             // AddObjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 561);
+            this.ClientSize = new System.Drawing.Size(1035, 647);
             this.Controls.Add(this.ToQuickFavoritesButton);
             this.Controls.Add(this.SelectObjectButton);
             this.Controls.Add(this.SharedContentPanel);
             this.Controls.Add(this.ObjectTypeTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "AddObjectForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Spotlight - Add Object";
