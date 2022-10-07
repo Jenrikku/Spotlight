@@ -7,6 +7,7 @@ It has a boatload of features allowing you to make your very own levels, toad ho
 
 - OpenGL 3.0+
 - Windows 8+
+- .NET 7.0+ Desktop Runtime ([download here](https://dotnet.microsoft.com/en-us/download/dotnet/7.0))
 
 ## Assistance and How to Use
 
@@ -14,14 +15,10 @@ A full guide to Spotlight can be found on the [Spotlight Wiki](https://github.co
 
 ## Compiling from Source
 
-To compile Spotlight you will need to download it to a folder also containing the <a href="https://github.com/jupahe64/GL_EditorFramework">GL_EditorFramework</a><br/> repository.
-The folder layout should look like this:<br/>
-<br/>
-![image](https://user-images.githubusercontent.com/44330283/76013595-05647e00-5ecd-11ea-8c04-0752df56e593.png)
-<br/>
-These folders must contain their respective project repositories.
-(make sure to get rid of the -master in the end when downloading both)<br/>
-After that it should be ready to go.
+On the original version of Spotlight, you needed to download GL_EditorFramework's source separately in order to compile it.<br/>
+
+**This is not the case anymore** - All you need to do is clone the repository and you are good to go!<br/>
+You may want to use dotnet build or your IDE of preference.
 
 # Join Us
 If you need help with the program or editing the game, you can Join the Cat Chat (<a href="https://discord.gg/9JGKSze"><img src="https://img.shields.io/discord/308323056592486420.svg?color=7289da&logo=discord&logoColor=white" alt="The Cat Chat" /></a>). You can talk to other SM3DW hackers here as well as show your own hacking accomplishments.<br/>(*Dislaimer: We cannot help you get the 3D World files*)
@@ -36,3 +33,5 @@ If you need help with the program or editing the game, you can Join the Cat Chat
 - KFreon: DXT1 Decompression
 
 - Whitehole (SMG Level editor): Some features and visuals were inspired by Whitehole
+
+- Jenrikku (JkKU): .NET port and minor features.
