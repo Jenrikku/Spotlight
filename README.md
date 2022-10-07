@@ -20,6 +20,8 @@ On the original version of Spotlight, you needed to download GL_EditorFramework'
 **This is not the case anymore** - All you need to do is clone the repository* and you are good to go!<br/>
 You may want to use dotnet build or your IDE of preference.
 
+Additionally, you could use the building scripts in the repository.
+
 \* Make sure you use ` git clone --recurse-submodules https://github.com/Jenrikku/Spotlight-NET.git` in order to clone dependencies (submodules) as well.
 
 # Join Us
